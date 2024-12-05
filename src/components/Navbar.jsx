@@ -1,30 +1,93 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <nav className="bg-black text-white px-8 md:px-16 lg:px-24">
-      <div className="container py-2 flex justify-center md:justify-between items-center">
-        <div className="text-2xl font-bold hidden md:inline">Dhritiman</div>
-        <div className="space-x-6">
-          <a href="#home" className="hover: text-gray-400">
-            Home
-          </a>
-          <a href="#about" className="hover: text-gray-400">
-            About Me
-          </a>
-          <a href="#services" className="hover: text-gray-400">
-            Services
-          </a>
-          <a href="#projects" className="hover: text-gray-400">
-            Projects
-          </a>
-          <a href="#contact" className="hover: text-gray-400">
-            Contact
-          </a>
-        </div>
+    <nav className="bg-black text-white px-6 py-4 fixed w-full z-10 shadow-md">
+      <div className="flex justify-between items-center container mx-auto">
+        <div className="text-2xl font-bold">Dhritiman</div>
+
         <button
-          className="bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline transform transition-transform duration-200 hover:scale-105 px-4 py-2 rounded-full"
-          onClick={() => {
-            window.open("https://www.linkedin.com/in/dhritiman-roy", "_blank");
-          }}
+          className="md:hidden text-2xl focus:outline-none z-20"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        <ul
+          className={`fixed top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center 
+          space-y-8 text-xl transition-transform transform ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } md:static md:h-auto md:flex md:flex-row md:space-y-0 md:space-x-6 md:translate-x-0 md:bg-transparent`}
+        >
+          <li>
+            <a
+              href="#home"
+              className="hover:text-green-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              className="hover:text-green-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About Me
+            </a>
+          </li>
+          <li>
+            <a
+              href="#services"
+              className="hover:text-green-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              className="hover:text-green-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="hover:text-green-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </a>
+          </li>
+          <li className="md:hidden">
+            <button
+              className="bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-full"
+              onClick={() => {
+                setIsMenuOpen(false);
+                window.open(
+                  "https://www.linkedin.com/in/dhritiman-roy",
+                  "_blank"
+                );
+              }}
+            >
+              Connect Me
+            </button>
+          </li>
+        </ul>
+
+        <button
+          className="hidden md:inline bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-2 rounded-full whitespace-nowrap text-sm md:text-base"
+          onClick={() =>
+            window.open("https://www.linkedin.com/in/dhritiman-roy", "_blank")
+          }
         >
           Connect Me
         </button>
