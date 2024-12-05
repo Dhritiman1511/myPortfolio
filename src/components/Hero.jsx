@@ -18,25 +18,25 @@ function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const typingSpeed = isDeleting ? 50 : 100; // Typing and deleting speeds
+    const typingSpeed = isDeleting ? 50 : 100; 
     const timeout = setTimeout(() => {
       if (!isDeleting && typingIndex < titles[titleIndex].length) {
-        setTypingIndex((prev) => prev + 1); // Typing letters
+        setTypingIndex((prev) => prev + 1); 
       } else if (isDeleting && typingIndex > 0) {
-        setTypingIndex((prev) => prev - 1); // Deleting letters
+        setTypingIndex((prev) => prev - 1); 
       } else if (!isDeleting && typingIndex === titles[titleIndex].length) {
-        setTimeout(() => setIsDeleting(true), 1000); // Pause before deleting
+        setTimeout(() => setIsDeleting(true), 1000);
       } else if (isDeleting && typingIndex === 0) {
-        setIsDeleting(false); // Switch to the next title
-        setTitleIndex((prev) => (prev + 1) % titles.length); // Loop titles
+        setIsDeleting(false); 
+        setTitleIndex((prev) => (prev + 1) % titles.length); 
       }
     }, typingSpeed);
 
-    return () => clearTimeout(timeout); // Cleanup timeout
+    return () => clearTimeout(timeout); 
   }, [typingIndex, isDeleting, titleIndex, titles]);
 
   useEffect(() => {
-    setCurrentTitle(titles[titleIndex].slice(0, typingIndex)); // Update displayed text
+    setCurrentTitle(titles[titleIndex].slice(0, typingIndex));
   }, [titles, titleIndex, typingIndex]);
 
   return (
