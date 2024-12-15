@@ -22,23 +22,23 @@ const services = [
   },
   {
     id: 5,
-    title: "Content Writing",
-    description:
-      "Writing engaging and informative content for various platforms.",
+    title: "Mentoring",
+    description: "Guiding and teaching programming skills to students and professionals.",
   },
   {
-    id:6,
+    id: 6,
     title: "Flutter Development",
     description:
-      "Developing cross-platform applications using Flutter."
+      "Developing cross-platform applications using Flutter.",
   },
   {
     id: 7,
     title: "Data Analysis",
     description:
       "Analyzing large datasets and providing insights for business decisions.",
-  }
+  },
 ];
+
 
 function Services() {
   return (

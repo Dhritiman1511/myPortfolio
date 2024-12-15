@@ -5,7 +5,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white px-6 py-4 fixed w-full z-10 shadow-md">
+    <nav className="bg-black bg-opacity-30 backdrop-blur-lg text-white px-6 py-4 fixed w-full z-10 shadow-md">
       <div className="flex justify-between items-center container mx-auto">
         <div className="text-2xl font-bold">Dhritiman</div>
 

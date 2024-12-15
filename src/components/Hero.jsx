@@ -10,6 +10,7 @@ function Hero() {
     "Full-Stack Developer",
     "Flutter Developer",
     "Data Analyst",
+    "Programming Mentor",
   ];
 
   const [currentTitle, setCurrentTitle] = useState("");
