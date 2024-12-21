@@ -4,7 +4,7 @@
 Welcome to my personal portfolio website! This project showcases my skills, projects, and experiences in a visually appealing and responsive format.  
 
 ## 🔗 Live Demo  
-[**View Portfolio**](#) *(Replace with your live URL once deployed.)*  
+[**View Portfolio**](https://dhritimanroy.vercel.app/)
 
 ---
 
@@ -20,7 +20,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 ## 🛠️ Technologies Used  
 - **Frontend**: React.js, Tailwind CSS, EmailJS
 - **Animations**: Dynamic typing and hover effects  
-- **Hosting**: *(Add your hosting provider, e.g., Vercel, Netlify)*  
+- **Hosting**: Vercel
 
 ---
 
